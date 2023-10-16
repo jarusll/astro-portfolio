@@ -1,0 +1,67 @@
+---
+const requestHeaders = Array.from(Astro.request.headers);
+const responseHeaders = Array.from(Astro.response.headers);
+---
+
+<html>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">Request Headers</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          requestHeaders.map(([key, value]) => (
+            <tr>
+              <td class="cell-key">{key}</td>
+              <td class="cell-value">{value}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">Response Headers</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          responseHeaders.map(([key, value]) => (
+            <tr>
+              <td class="cell-key">{key}</td>
+              <td class="cell-value">{value}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+    <slot />
+  </body>
+</html>
+
+<style>
+  table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  th {
+    text-align: center;
+  }
+
+  td {
+    border: 1px solid black;
+    padding-left: 0.5rem;
+  }
+
+  .cell-key {
+    width: 20% !important;
+  }
+</style>
