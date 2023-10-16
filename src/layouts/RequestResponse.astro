@@ -45,14 +45,18 @@ const responseHeaders = Array.from(Astro.response.headers);
 
 <style>
   table {
-    border: 1px solid black;
+    border-top: 1px dashed black;
+    border-left: 5px solid rgb(102, 102, 102);
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
     border-collapse: collapse;
+
     width: 100%;
+
     margin-top: 1rem;
     margin-bottom: 2rem;
+
     box-shadow: 3px 3px 0px lightgray;
-    border-left: 5px solid rgb(94, 94, 94);
-    border-style: inset;
   }
 
   th {
@@ -61,7 +65,7 @@ const responseHeaders = Array.from(Astro.response.headers);
   }
 
   td {
-    border: 1px solid black;
+    border: 1px solid lightgray;
     padding-left: 0.5rem;
   }
 
