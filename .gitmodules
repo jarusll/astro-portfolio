@@ -1,0 +1,3 @@
+[submodule "src/pages/diary"]
+	path = src/pages/diary
+	url = git@github.com:jarusll/diary.git
