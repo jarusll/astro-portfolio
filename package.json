@@ -4,7 +4,9 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "prestart": "bash scripts/move_assets_from_diary.sh",
     "start": "astro dev",
+    "prebuild": "bash scripts/move_assets_from_diary.sh",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
