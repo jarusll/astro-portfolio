@@ -1,6 +1,6 @@
 #!/bin/bash
 # Define the source and destination directories
-src_dir="./src/pages/diary/"
+src_dir="./src/submodules/diary/"
 dest_dir="./public/"
 
 # Use find to copy all files except index.md
