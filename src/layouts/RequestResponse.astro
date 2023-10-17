@@ -52,9 +52,32 @@ const responseHeaders = Array.from(Astro.response.headers);
 </html>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Spline+Sans+Mono&display=swap');
+  @import url("https://fonts.googleapis.com/css2?family=Spline+Sans+Mono&display=swap");
+   /* Phones */
+  @media only screen and (min-width: 600px) {
+    body {
+      width: 100%;
+    }
+  }
+
+  /* Desktops */
+  @media only screen and (max-width: 1280px) {
+    body {
+      width: 40%;
+      margin: 0 auto;
+    }
+  }
+
+  /* Ultra wide */
+  @media only screen and (min-width: 1200px) {
+    body {
+      width: 35%;
+      margin: 0 auto;
+    }
+  }
+
   table {
-    font-family: 'Spline Sans Mono', monospace;
+    font-family: "Spline Sans Mono", monospace;
 
     width: 100%;
 
@@ -63,7 +86,6 @@ const responseHeaders = Array.from(Astro.response.headers);
     border-right: 1px solid lightgray;
     border-bottom: 1px solid black;
     border-collapse: collapse;
-
 
     margin-top: 1rem;
     margin-bottom: 2rem;
