@@ -2,6 +2,10 @@
 	path = diary
 	url = git@github.com:jarusll/diary.git
 	branch = migrate/astro
+[submodule "src/submodules/posts"]
+	path = src/submodules/posts
+	url = git@github.com:jarusll/posts.git
+	branch = master
 [submodule "src/submodules/diary"]
 	path = src/submodules/diary
 	url = git@github.com:jarusll/diary.git
