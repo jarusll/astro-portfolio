@@ -55,12 +55,9 @@ const responseHeaders = Array.from(Astro.response.headers);
   @import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
 
   table {
-    font-family: 'Courier Prime', monospace;
+    font-family: "Courier Prime", monospace;
 
     width: 72ch;
-
-    word-wrap: break-word;
-    overflow-wrap: break-word;
 
     border-top: 1px dashed lightgray;
     border-left: 5px solid rgb(102, 102, 102);
@@ -83,9 +80,6 @@ const responseHeaders = Array.from(Astro.response.headers);
   td {
     border: 1px solid lightgray;
     padding-left: 0.5rem;
-  }
-
-  .cell-key {
-    width: 20% !important;
+    word-break: break-all;
   }
 </style>
