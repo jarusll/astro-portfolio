@@ -1,7 +1,8 @@
-[submodule "src/submodules/diary"]
-	path = src/submodules/diary
-	url = git@github.com:jarusll/diary.git
 [submodule "diary"]
 	path = diary
+	url = git@github.com:jarusll/diary.git
+	branch = migrate/astro
+[submodule "src/submodules/diary"]
+	path = src/submodules/diary
 	url = git@github.com:jarusll/diary.git
 	branch = migrate/astro
