@@ -1,5 +1,11 @@
 ---
 import DiaryContent from "../submodules/diary/index.md";
+import process from "process";
+import path from "path";
+import fs from 'fs'
+import { POSTS_PATH } from "../constants";
+const rootPath = path.resolve(process.cwd(), POSTS_PATH);
+let postMarkdownFiles = []
 ---
 
 <html lang="en">
@@ -11,6 +17,60 @@ import DiaryContent from "../submodules/diary/index.md";
 		<title>Suraj Yadav</title>
 	</head>
 	<body>
+		<h2>Index of /suraj</h2>
+		<pre>{rootPath}</pre>
+		<table>
+			<thead>
+				<tr>
+					<td> Name</td>
+					<td> Size</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr> </tr>
+			</tbody>
+		</table>
+
+		 Suraj's Archive
+
+		 <Markdown path="../submodules/posts/discoverability.md"/>
 		<DiaryContent />
 	</body>
 </html>
+
+<style>
+	@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
+
+	table {
+		font-family: "Courier Prime", monospace;
+
+		width: 72ch;
+
+		border-top: 1px dashed lightgray;
+		border-left: 5px solid rgb(102, 102, 102);
+		border-right: 1px solid lightgray;
+		border-bottom: 1px solid black;
+		border-collapse: collapse;
+
+		margin-top: 1rem;
+		margin-bottom: 2rem;
+
+		box-shadow: 2px 2px 0px rgb(226, 226, 226);
+	}
+
+	th {
+		text-align: center;
+		font-weight: bold;
+		border-bottom: 1px solid black;
+	}
+
+	td {
+		border: 1px solid lightgray;
+		padding-left: 0.5rem;
+		word-break: break-word;
+	}
+
+	.cell-key {
+		width: 30%;
+	}
+</style>
