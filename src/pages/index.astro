@@ -2,10 +2,21 @@
 import DiaryContent from "../submodules/diary/index.md";
 import process from "process";
 import path from "path";
-import fs from 'fs'
+import fs from "fs";
+import { filesize } from "filesize";
 import { POSTS_PATH } from "../constants";
-const rootPath = path.resolve(process.cwd(), POSTS_PATH);
-let postMarkdownFiles = []
+const postsPath = path.resolve(process.cwd(), POSTS_PATH);
+
+const files = fs.readdirSync(postsPath);
+let markdownFiles = files
+	.filter((file) => path.extname(file).toLowerCase() === ".md")
+	.map((file) => {
+		return {
+			path: path.join('/posts/', path.parse(file).name),
+			name: file,
+			size: filesize(fs.statSync(path.resolve(postsPath, file)).size),
+		};
+	});
 ---
 
 <html lang="en">
@@ -18,27 +29,31 @@ let postMarkdownFiles = []
 	</head>
 	<body>
 		<h2>Index of /suraj</h2>
-		<pre>{rootPath}</pre>
 		<table>
 			<thead>
 				<tr>
-					<td> Name</td>
-					<td> Size</td>
+					<td>Name</td>
+					<td>Size</td>
 				</tr>
 			</thead>
 			<tbody>
-				<tr> </tr>
+				{
+					markdownFiles.map(({ name, size, path }) => (
+						<tr>
+							<td>
+								<a href={path}>{name}</a>
+							</td>
+							<td>{size}</td>
+						</tr>
+					))
+				}
 			</tbody>
 		</table>
-
-		 Suraj's Archive
-
-		 <Markdown path="../submodules/posts/discoverability.md"/>
 		<DiaryContent />
 	</body>
 </html>
 
-<style>
+<style is:global>
 	@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
 
 	table {
