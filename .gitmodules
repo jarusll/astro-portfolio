@@ -6,3 +6,7 @@
 	path = src/submodules/diary
 	url = git@github.com:jarusll/diary.git
 	branch = migrate/astro
+[submodule "src/pages/posts"]
+	path = src/pages/posts
+	url = git@github.com:jarusll/posts.git
+	branch = master
