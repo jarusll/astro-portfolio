@@ -6,6 +6,6 @@ update:
 
 build: update
 	yarn
-	yarn run build
 	pkill -f "node ./dist/server/entry.mjs"
-	node ./dist/server/entry.mjs
+	yarn run build
+	nohup node ./dist/server/entry.mjs &
