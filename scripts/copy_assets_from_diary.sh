@@ -10,7 +10,7 @@ make -p ./public
 find $src_dir -type f ! -name 'index.md' ! -name .git ! -name .gitignore -exec cp {} $dest_dir \;
 
 # loop & compress images
-# find $dest_dir -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) | parallel cwebp {} -o {}
+find $dest_dir -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) | parallel cwebp {} -o {} -progress -q 50 -short
 # for file in $dest_dir/*; do
 #   if [[ $file =~ \.(png|jpg|jpeg) ]]; then
 #     cwebp $file -o $file -q 50
