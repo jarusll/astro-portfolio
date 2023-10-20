@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "prestart": "bash scripts/copy_assets_from_diary.sh",
     "start": "astro dev",
-    "prebuild": "bash scripts/copy_assets_from_diary.sh",
+"prebuild": "bash scripts/copy_assets_from_diary.sh",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
@@ -14,7 +14,6 @@
   "dependencies": {
     "@astrojs/node": "^5",
     "astro": "^3.2.0",
-    "astro-purgecss": "^3.2.1",
     "filesize": "^10.1.0",
     "purgecss": "^5.0.0",
     "remixicon": "^3.5.0"
