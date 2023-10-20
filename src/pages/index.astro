@@ -1,4 +1,6 @@
 ---
+import "remixicon/fonts/remixicon.css";
+
 import DiaryContent from "../submodules/diary/index.md";
 import process from "process";
 import path from "path";
@@ -7,12 +9,18 @@ import { filesize } from "filesize";
 import { POSTS_PATH } from "../constants";
 const postsPath = path.resolve(process.cwd(), POSTS_PATH);
 
+const iconMappings = {
+	".md": "ri-markdown-line",
+};
+
 const files = fs.readdirSync(postsPath);
+
 let markdownFiles = files
 	.filter((file) => path.extname(file).toLowerCase() === ".md")
 	.map((file) => {
 		return {
-			path: path.join('/posts/', path.parse(file).name),
+			icon: iconMappings[path.extname(file).toLowerCase()] ?? "ri-file-unknow-line",
+			path: path.join("/posts/", path.parse(file).name),
 			name: file,
 			size: filesize(fs.statSync(path.resolve(postsPath, file)).size),
 		};
@@ -38,10 +46,10 @@ let markdownFiles = files
 			</thead>
 			<tbody>
 				{
-					markdownFiles.map(({ name, size, path }) => (
+					markdownFiles.map(({ icon, name, size, path }) => (
 						<tr>
 							<td>
-								<a href={path}>{name}</a>
+								<i class={icon}></i><a href={path} class="post-link">{name}</a>
 							</td>
 							<td>{size}</td>
 						</tr>
@@ -89,5 +97,10 @@ let markdownFiles = files
 
 	.cell-key {
 		width: 30%;
+	}
+
+	.post-link {
+		border: none;
+		padding-left: 0.5rem;
 	}
 </style>
