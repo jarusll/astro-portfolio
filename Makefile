@@ -1,3 +1,4 @@
+SHELL=/bin/bash
 all: build
 
 update:
@@ -6,6 +7,6 @@ update:
 
 build: update
 	yarn
-	pkill -f "node ./dist/server/entry.mjs"
+	-pkill node
 	yarn run build
 	nohup node ./dist/server/entry.mjs &
