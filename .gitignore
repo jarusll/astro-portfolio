@@ -22,4 +22,4 @@ pnpm-debug.log*
 
 # public assets
 public/
-env.d.ts
+src/env.d.ts
