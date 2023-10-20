@@ -6,6 +6,7 @@
     "dev": "astro dev",
     "prestart": "bash scripts/copy_assets_from_diary.sh",
     "start": "astro dev",
+    "prebuild": "bash scripts/copy_assets_from_diary.sh",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
