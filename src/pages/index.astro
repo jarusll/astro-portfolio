@@ -33,14 +33,15 @@ const iconMappings = {
 			<thead>
 				<tr>
 					<td>Name</td>
+					<td>Timestamp</td>
 					<td>Size</td>
 				</tr>
 			</thead>
 			<tbody>
 				{
-					allPosts.map(({ slug, body, data: { title } }) => (
+					allPosts.map(({ slug, body, data: { title, date } }) => (
 						<tr>
-							<td>
+							<td class="post-title">
 								<>
 									<i class="ri-markdown-line" />
 									<a href={`/posts/${slug}`} class="post-link">
@@ -48,7 +49,8 @@ const iconMappings = {
 									</a>
 								</>
 							</td>
-							<td class="cell-size">{filesize(body.length)}</td>
+							<td title={date.toISOString().substring(0, 10)} class="post-date">{date.getTime()}</td>
+							<td class="post-size">{filesize(body.length)}</td>
 						</tr>
 					))
 				}
@@ -92,14 +94,6 @@ const iconMappings = {
 		word-break: break-word;
 	}
 
-	.cell-key {
-		width: 30%;
-	}
-
-	.cell-size {
-		width: 20%;
-	}
-
 	.post-link {
 		border: none;
 		padding-left: 0.5rem;
@@ -108,5 +102,15 @@ const iconMappings = {
 	pre {
 		height: 200px;
 		overflow: scroll;
+	}
+
+	.post-title {
+		width: 60%
+	}
+	.post-date {
+		width: 20%
+	}
+	.post-size {
+		width: 20%
 	}
 </style>
