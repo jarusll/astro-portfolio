@@ -8,7 +8,7 @@ import { POSTS_PATH } from "../constants";
 
 let allPosts = (await getCollection("posts")).filter(
 	(x) => !x.slug.includes("drafts"),
-)
+);
 
 allPosts.sort((a, b) => b.date - a.date);
 const postsJson = JSON.stringify(allPosts, null, 4);
@@ -41,9 +41,12 @@ const iconMappings = {
 					allPosts.map(({ slug, body, data: { title } }) => (
 						<tr>
 							<td>
-								<a href={`/posts/${slug}`} class="post-link">
-									{title}
-								</a>
+								<>
+									<i class="ri-markdown-line" />
+									<a href={`/posts/${slug}`} class="post-link">
+										{title}
+									</a>
+								</>
 							</td>
 							<td class="cell-size">{filesize(body.length)}</td>
 						</tr>
