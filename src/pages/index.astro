@@ -39,7 +39,7 @@ const iconMappings = {
 			</thead>
 			<tbody>
 				{
-					allPosts.map(({ slug, body, data: { title, date } }) => (
+					allPosts.map(({ id: title, slug, body, data: { date } }) => (
 						<tr>
 							<td class="post-title">
 								<>
