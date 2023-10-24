@@ -58,6 +58,19 @@ const responseHeaders = Array.from(Astro.response.headers);
 
   body {
     font-family: "Courier Prime", monospace;
+    width: 72ch;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
+    font-family: 'Courier Prime', monospace;
+    text-rendering: optimizeLegibility;
+    line-height: 1.5rem;
+
+    padding-left: 1rem;
+    padding-right: 0.75rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   table {
@@ -89,5 +102,20 @@ const responseHeaders = Array.from(Astro.response.headers);
 
   .cell-key {
     width: 30%;
+  }
+
+  code {
+    font-weight: bold;
+    background: black;
+    color: white;
+    padding: 0.2rem;
+    white-space: nowrap;
+  }
+
+  code:before {
+    content: "`"
+  }
+  code:after {
+    content: "`"
   }
 </style>
