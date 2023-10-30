@@ -2,7 +2,6 @@
 import "remixicon/fonts/remixicon.css";
 
 import { getCollection } from "astro:content";
-import DiaryContent from "../submodules/diary/index.md";
 import { filesize } from "filesize";
 import { POSTS_PATH } from "../constants";
 
@@ -16,6 +15,7 @@ const postsJson = JSON.stringify(allPosts, null, 4);
 const iconMappings = {
 	".md": "ri-markdown-line",
 };
+const archiveDate = new Date("2022-03-24");
 ---
 
 <html lang="en">
@@ -38,6 +38,19 @@ const iconMappings = {
 				</tr>
 			</thead>
 			<tbody>
+				<tr>
+					<td class="post-title">
+						<>
+							<i class="ri-markdown-line"></i>
+							<a href="/logs" class="post-link">logs</a>
+						</>
+					</td>
+					<td
+						title={archiveDate.toISOString().substring(0, 10)}
+						class="post-date">{archiveDate.getTime()}</td
+					>
+					<td class="post-size">Nil</td>
+				</tr>
 				{
 					allPosts.map(({ id: title, slug, body, data: { date } }) => (
 						<tr>
@@ -49,16 +62,15 @@ const iconMappings = {
 									</a>
 								</>
 							</td>
-							<td title={date.toISOString().substring(0, 10)} class="post-date">{date.getTime()}</td>
+							<td title={date.toISOString().substring(0, 10)} class="post-date">
+								{date.getTime()}
+							</td>
 							<td class="post-size">{filesize(body.length)}</td>
 						</tr>
 					))
 				}
 			</tbody>
 		</table>
-
-		<h3>Archive of Suraj Yadav</h3>
-		<DiaryContent />
 	</body>
 </html>
 
@@ -105,12 +117,12 @@ const iconMappings = {
 	}
 
 	.post-title {
-		width: 60%
+		width: 60%;
 	}
 	.post-date {
-		width: 20%
+		width: 20%;
 	}
 	.post-size {
-		width: 20%
+		width: 20%;
 	}
 </style>
