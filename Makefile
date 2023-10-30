@@ -3,6 +3,10 @@ SHELL=/bin/bash
 .PHONY:all
 all: build
 
+.PHONY:dev
+dev:update
+	yarn run start
+
 .PHONY:update
 update:
 	git pull
