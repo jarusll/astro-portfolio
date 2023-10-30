@@ -1,14 +1,14 @@
 SHELL=/bin/bash
 
-.PHONY
+.PHONY:all
 all: build
 
-.PHONY
+.PHONY:update
 update:
 	git pull
 	git submodule update --rebase --remote
 
-.PHONY
+.PHONY:build
 build: update
 	yarn
 	-pkill node
