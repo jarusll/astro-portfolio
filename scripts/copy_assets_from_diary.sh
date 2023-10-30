@@ -1,6 +1,6 @@
 #!/bin/bash
 # Define the source and destination directories
-src_dir="./src/submodules/diary/"
+src_dir="./src/pages/logs/"
 dest_dir="./public/"
 
 # Supress output
