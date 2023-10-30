@@ -3,6 +3,9 @@
 src_dir="./src/submodules/diary/"
 dest_dir="./public/"
 
+# Supress output
+exec > /dev/null 2>&1
+
 # make public dir
 make -p ./public
 
