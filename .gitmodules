@@ -1,6 +1,8 @@
 [submodule "src/pages/logs"]
 	path = src/pages/logs
 	url = git@github.com:jarusll/diary.git
+	update = merge
 [submodule "src/content/posts"]
 	path = src/content/posts
 	url = git@github.com:jarusll/posts.git
+	update = merge
