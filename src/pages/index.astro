@@ -8,9 +8,12 @@ import { POSTS_PATH } from "../constants";
 let allPosts = (await getCollection("posts")).filter(
 	(x) => !x.slug.includes("drafts"),
 );
+const postsJson = JSON.stringify(allPosts, null, 4);
 
 allPosts.sort((a, b) => b.date - a.date);
-const postsJson = JSON.stringify(allPosts, null, 4);
+
+const logs = await getCollection("logs")
+const logsAttributes = logs[0]
 
 const iconMappings = {
 	".md": "ri-markdown-line",
@@ -28,7 +31,8 @@ const archiveDate = new Date("2022-03-24");
 	</head>
 	<body>
 		<h2>Index of /suraj</h2>
-		<!-- <pre>{postsJson}</pre> -->
+		<!-- <pre>{postsJson}</pre>
+		<pre>{logs}</pre> -->
 		<table>
 			<thead>
 				<tr>
@@ -47,9 +51,9 @@ const archiveDate = new Date("2022-03-24");
 					</td>
 					<td
 						title={archiveDate.toISOString().substring(0, 10)}
-						class="post-date">{archiveDate.getTime()}</td
+						class="post-date">{logsAttributes.data.date.getTime()}</td
 					>
-					<td class="post-size">Nil</td>
+					<td class="post-size">{filesize( logsAttributes.body.length )}</td>
 				</tr>
 				{
 					allPosts.map(({ id: title, slug, body, data: { date } }) => (
