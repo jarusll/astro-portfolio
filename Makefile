@@ -9,6 +9,7 @@ dev:update
 
 .PHONY:update
 update:
+	git restore .
 	git pull
 	git submodule update --rebase --remote
 
