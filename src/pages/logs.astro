@@ -1,0 +1,13 @@
+---
+import { getEntry } from "astro:content";
+
+const entry = await getEntry("logs", "index");
+
+if (entry === undefined) {
+  return Astro.redirect("/404");
+}
+
+const { Content } = await entry.render();
+---
+
+<Content />
