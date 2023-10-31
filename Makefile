@@ -1,5 +1,9 @@
 SHELL=/bin/bash
 
+.PHONY:init
+init:
+	git submodule update --init --recursive
+
 .PHONY:all
 all: build
 
