@@ -1,7 +1,6 @@
-[submodule "src/content/posts"]
-	path = src/content/posts
-	url = https://github.com/jarusll/posts.git
-	update = merge
 [submodule "src/content/logs"]
 	path = src/content/logs
-	url = https://github.com/jarusll/diary.git
+	url = https://github.com/jarusll/the-logs.git
+[submodule "src/content/posts"]
+	path = src/content/posts
+	url = https://github.com/jarusll/the-posts.git
