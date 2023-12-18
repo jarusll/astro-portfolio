@@ -26,4 +26,4 @@ build: update
 .PHONY:serve
 serve: build
 	-pkill node
-	nohup node ./dist/server/entry.mjs &
+	yarn run preview
