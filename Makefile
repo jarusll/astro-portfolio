@@ -1,25 +1,29 @@
 SHELL=/bin/bash
 
-
 .PHONY:all
 all: build
 
 .PHONY:init
 init:
 	git submodule update --init --recursive
+	@yarn
 
 .PHONY:dev
-dev:update
+dev: update
 	yarn run start
 
 .PHONY:update
-update:
+update: init
 	git pull
 	git submodule update --rebase --remote
 
 .PHONY:build
 build: update
-	yarn
+	@echo building...
+	@yarn run build
+	@echo built
+
+.PHONY:serve
+serve: build
 	-pkill node
-	yarn run build
 	nohup node ./dist/server/entry.mjs &
