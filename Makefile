@@ -26,4 +26,4 @@ build: update
 .PHONY:serve
 serve: build
 	-pkill node
-	nohup -o nohup.out yarn run preview
+	nohup yarn run preview
