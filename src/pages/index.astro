@@ -12,8 +12,8 @@ const postsJson = JSON.stringify(allPosts, null, 4);
 
 allPosts.sort((a, b) => b.date - a.date);
 
-const logs = await getCollection("logs")
-const logsAttributes = logs[0]
+const logs = await getCollection("logs");
+const logsAttributes = logs[0];
 
 const iconMappings = {
 	".md": "ri-markdown-line",
@@ -53,7 +53,7 @@ const archiveDate = new Date("2022-03-24");
 						title={archiveDate.toISOString().substring(0, 10)}
 						class="post-date">{logsAttributes.data.date.getTime()}</td
 					>
-					<td class="post-size">{filesize( logsAttributes.body.length )}</td>
+					<td class="post-size">{filesize(logsAttributes.body.length)}</td>
 				</tr>
 				{
 					allPosts.map(({ id: title, slug, body, data: { date } }) => (
@@ -79,10 +79,21 @@ const archiveDate = new Date("2022-03-24");
 </html>
 
 <style is:global>
-	@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
+	/* ia-writer-mono-latin-400-normal */
+	@font-face {
+		font-family: "iA Writer Mono";
+		font-style: normal;
+		font-display: swap;
+		font-weight: 400;
+		src:
+			url(https://cdn.jsdelivr.net/fontsource/fonts/ia-writer-mono@latest/latin-400-normal.woff2)
+				format("woff2"),
+			url(https://cdn.jsdelivr.net/fontsource/fonts/ia-writer-mono@latest/latin-400-normal.woff)
+				format("woff");
+	}
 
 	table {
-		font-family: "Courier Prime", monospace;
+		font-family: "iA Writer Mono", monospace;
 
 		width: 72ch;
 
