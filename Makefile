@@ -10,7 +10,7 @@ init:
 
 .PHONY:dev
 dev: update
-	yarn run start
+	yarn run start --host
 
 .PHONY:update
 update: init
