@@ -511,6 +511,11 @@
   resolved "https://registry.yarnpkg.com/@fastify/busboy/-/busboy-2.0.0.tgz#f22824caff3ae506b18207bad4126dbc6ccdb6b8"
   integrity sha512-JUFJad5lv7jxj926GPgymrWQxxjPYuJNiNjNMzqT+HiuP6Vl3dk5xzG+8sTX96np0ZAluvaMzPsjhHZ5rNuNQQ==
 
+"@fontsource/chivo-mono@^5.0.20":
+  version "5.0.20"
+  resolved "https://registry.yarnpkg.com/@fontsource/chivo-mono/-/chivo-mono-5.0.20.tgz#c4289d343e1d4c02d957dcae1afcc052c45da2ce"
+  integrity sha512-hKWCeT/RxP3h//AirEx+1OHtnnvSr4hCP1sC42M+bbEwVTC9u1kGsZo9EyEOC4FAeR1XZmt2oGW90xJO3YoDFQ==
+
 "@jridgewell/gen-mapping@^0.3.0", "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/@jridgewell/gen-mapping/-/gen-mapping-0.3.3.tgz#7e02e6eb5df901aaedb08514203b096614024098"
@@ -2741,11 +2746,6 @@ remark-smartypants@^2.0.0:
     retext "^8.1.0"
     retext-smartypants "^5.1.0"
     unist-util-visit "^4.1.0"
-
-remixicon@^3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/remixicon/-/remixicon-3.5.0.tgz#ad3ea8e6cd80d6bc7a9a261fafc229f04a32ce5f"
-  integrity sha512-wNzWGKf4frb3tEmgvP5shry0n1OdTjjEk9RHLuRuAhfA50bvEdpKH1XWNUYrHUSjAQQkkdyIm+lf4mOuysIKTQ==
 
 resolve@^1.17.0, resolve@^1.22.4:
   version "1.22.6"
