@@ -9,6 +9,7 @@
     "start": "astro dev",
     "prebuild": "bash scripts/copy_assets_from_diary.sh",
     "build": "astro build",
+    "postbuild": "jampack ./dist",
     "preview": "astro preview",
     "astro": "astro"
   },
