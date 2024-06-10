@@ -8,7 +8,5 @@ export default defineConfig({
   output: 'server',
   adapter: node({
     mode: 'standalone'
-  }),
-  site: 'https://suraj.lol',
-  integrations: [sitemap()]
+  })
 });
