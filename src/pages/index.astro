@@ -1,6 +1,6 @@
 ---
-import "../styles/reset.css" 
-import "../styles/style.css" 
+import "../styles/reset.css"
+import "../styles/style.css"
 import { getCollection } from "astro:content";
 import { filesize } from "filesize";
 import { POSTS_PATH } from "../constants";
@@ -23,6 +23,8 @@ const archiveDate = new Date("2022-03-24");
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="Personal website of Suraj Yadav. Blogs about programming solutions with first principles.">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Suraj Yadav</title>
 	</head>
 	<body>
