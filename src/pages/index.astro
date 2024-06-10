@@ -1,6 +1,6 @@
 ---
-import "remixicon/fonts/remixicon.css";
-
+import "../styles/reset.css" 
+import "../styles/style.css" 
 import { getCollection } from "astro:content";
 import { filesize } from "filesize";
 import { POSTS_PATH } from "../constants";
@@ -78,68 +78,3 @@ const archiveDate = new Date("2022-03-24");
 	</body>
 </html>
 
-<style is:global>
-	/* ia-writer-mono-latin-400-normal */
-	@font-face {
-		font-family: "iA Writer Mono";
-		font-style: normal;
-		font-display: swap;
-		font-weight: 400;
-		src:
-			url(https://cdn.jsdelivr.net/fontsource/fonts/ia-writer-mono@latest/latin-400-normal.woff2)
-				format("woff2"),
-			url(https://cdn.jsdelivr.net/fontsource/fonts/ia-writer-mono@latest/latin-400-normal.woff)
-				format("woff");
-	}
-
-	body {
-		font-family: "iA Writer Mono", monospace;
-	}
-
-	table {
-		width: 72ch;
-
-		border-top: 1px dashed black;
-		border-left: 5px solid black;
-		border-right: 1px solid black;
-		border-bottom: 1px solid black;
-		border-collapse: collapse;
-
-		margin-top: 1rem;
-		margin-bottom: 2rem;
-
-		box-shadow: 2px 2px 0px black;
-	}
-
-	th {
-		text-align: center;
-		font-weight: bold;
-		border-bottom: 1px solid black;
-	}
-
-	td {
-		border: 1px solid black;
-		padding-left: 0.5rem;
-		word-break: break-word;
-	}
-
-	.post-link {
-		border: none;
-		padding-left: 0.5rem;
-	}
-
-	pre {
-		height: 200px;
-		overflow: scroll;
-	}
-
-	.post-title {
-		width: 60%;
-	}
-	.post-date {
-		width: 20%;
-	}
-	.post-size {
-		width: 20%;
-	}
-</style>

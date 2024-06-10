@@ -1,6 +1,7 @@
 ---
 import { getEntry } from "astro:content";
-
+import "../styles/reset.css" 
+import "../styles/style.css" 
 const entry = await getEntry("logs", "index");
 
 if (entry === undefined) {
