@@ -17,5 +17,9 @@
     "astro": "^3.2.0",
     "filesize": "^10.1.0",
     "purgecss": "^5.0.0"
+  },
+  "devDependencies": {
+    "@divriots/jampack": "^0.24.4",
+    "sharp": "^0.33.4"
   }
 }
