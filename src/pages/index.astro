@@ -14,10 +14,6 @@ allPosts.sort((a, b) => b.date - a.date);
 
 const logs = await getCollection("logs");
 const logsAttributes = logs[0];
-
-const iconMappings = {
-	".md": "ri-markdown-line",
-};
 const archiveDate = new Date("2022-03-24");
 ---
 
@@ -45,7 +41,6 @@ const archiveDate = new Date("2022-03-24");
 				<tr>
 					<td class="post-title">
 						<>
-							<i class="ri-markdown-line"></i>
 							<a href="/logs" class="post-link">logs</a>
 						</>
 					</td>
@@ -60,7 +55,6 @@ const archiveDate = new Date("2022-03-24");
 						<tr>
 							<td class="post-title">
 								<>
-									<i class="ri-markdown-line" />
 									<a href={`/posts/${slug}`} class="post-link">
 										{title}
 									</a>

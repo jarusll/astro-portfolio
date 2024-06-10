@@ -49,70 +49,13 @@ const responseHeaders = Array.from(Astro.response.headers);
       </tbody>
     </table>
     <slot />
-    EOF
+    <span class="EOF">EOF</span>
   </body>
 </html>
 
-<style is:global>
-
-  body {
-		font-family: "iA Writer Mono", monospace;
-    width: 72ch;
-
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-
-    text-rendering: optimizeLegibility;
-    line-height: 1.5rem;
-
-    padding-left: 1rem;
-    padding-right: 0.75rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-
-  table {
-    width: 72ch;
-
-    border-top: 1px dashed black;
-    border-left: 5px solid black;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
-    border-collapse: collapse;
-
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-
-    box-shadow: 2px 2px 0px black;
-  }
-
-  th {
-    text-align: center;
-    font-weight: bold;
-    border-bottom: 1px solid black;
-  }
-
-  td {
-    border: 1px solid black;
-    padding-left: 0.5rem;
-    word-break: break-word;
-  }
-
-  .cell-key {
-    width: 30%;
-  }
-
-  code {
-    background: black;
-    color: white;
-    font-weight: bold;
-    padding: 0.2rem;
-  }
-
-  code:before {
-    content: "`"
-  }
-  code:after {
-    content: "`"
-  }
+<style>
+.EOF {
+  display: block;
+  margin: 50px auto;
+}
 </style>
