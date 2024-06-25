@@ -17,6 +17,10 @@ update: init
 	git pull
 	git submodule update --rebase --remote
 
+commit-and-push-submodules:
+	git commit -am "Update submodules"
+	git push
+
 .PHONY:build
 build: update
 	@echo building...
