@@ -3,7 +3,6 @@ import "../styles/reset.css";
 import "../styles/style.css";
 import { getCollection } from "astro:content";
 import { filesize } from "filesize";
-import { POSTS_PATH } from "../constants";
 
 let allPosts = (await getCollection("posts")).filter(
 	(x) => !x.slug.includes("drafts"),
