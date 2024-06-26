@@ -7,11 +7,12 @@ import { filesize } from "filesize";
 let allPosts = (await getCollection("posts")).filter(
 	(x) => !x.slug.includes("drafts"),
 );
-const postsJson = JSON.stringify(allPosts, null, 4);
-
 allPosts.sort((a, b) => b.data.date - a.data.date);
 
+// const postsJson = JSON.stringify(allPosts, null, 4);
+
 const logs = await getCollection("logs");
+logs.sort((a, b) => b.data.date - a.data.date);
 ---
 
 <html lang="en">
