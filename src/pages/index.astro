@@ -12,8 +12,6 @@ const postsJson = JSON.stringify(allPosts, null, 4);
 allPosts.sort((a, b) => b.data.date - a.data.date);
 
 const logs = await getCollection("logs");
-const logsAttributes = logs[0];
-const archiveDate = new Date("2022-03-24");
 ---
 
 <html lang="en">
@@ -43,21 +41,33 @@ const archiveDate = new Date("2022-03-24");
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td class="post-title">
-						<>
-							<a href="/logs" class="post-link">logs</a>
-						</>
-					</td>
-					<td
-						title={archiveDate.toISOString().substring(0, 10)}
-						class="post-date"
-						>{logsAttributes.data.date.getTime()}</td
-					>
-					<td class="post-size"
-						>{filesize(logsAttributes.body.length)}</td
-					>
-				</tr>
+				{
+					logs.map(
+						({ id: title, slug, body, data: { date } }) => (
+							<tr>
+								<td class="post-title">
+									<>
+										<a
+											href={`/logs/${slug}`}
+											class="post-link"
+										>
+											{title}
+										</a>
+									</>
+								</td>
+								<td
+									title={date.toISOString().substring(0, 10)}
+									class="post-date"
+								>
+									{date.getTime()}
+								</td>
+								<td class="post-size">
+									{filesize(body.length)}
+								</td>
+							</tr>
+						),
+					)
+				}
 				{
 					allPosts.map(
 						({ id: title, slug, body, data: { date } }) => (
