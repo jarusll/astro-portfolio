@@ -10,7 +10,7 @@ init:
 
 .PHONY:dev
 dev: update
-	yarn run start --host
+	pnpm run start --host
 
 .PHONY:update
 update: init
@@ -30,4 +30,4 @@ build: update
 .PHONY:serve
 serve: build
 	-pkill node
-	nohup yarn run preview &
+	nohup pnpm run preview &
