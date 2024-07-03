@@ -26,3 +26,6 @@ src/env.d.ts
 
 # Optimization
 .jampack
+
+# serve
+nohup.out
