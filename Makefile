@@ -6,7 +6,7 @@ all: build
 .PHONY:init
 init:
 	git submodule update --init --recursive
-	@yarn
+	@pnpm i
 
 .PHONY:dev
 dev: update
@@ -24,7 +24,7 @@ commit-and-push-submodules:
 .PHONY:build
 build: update
 	@echo building...
-	@yarn run build
+	@pnpm run build
 	@echo built
 
 .PHONY:serve
